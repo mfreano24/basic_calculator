@@ -152,8 +152,9 @@ public class Calculator {
     public void Calculate() {
         Scanner input = new Scanner(System.in);
         double result=0;
-        double number_1=0;
+        double number_1;
         double number_2=0;
+        double ans = 0;
         while (true) {
             System.out.print("Press Enter to continue, or type !help for a list of operators.\n"
                     + "Or, type !end to stop.");
@@ -170,7 +171,7 @@ public class Calculator {
             System.out.println("---Enter calculation---");
             String nextNum = input.nextLine();
             if(nextNum.equals("ans")){
-                number_1 = result;
+                number_1 = ans;
             }
             else{
                 number_1 = Double.parseDouble(nextNum);
@@ -307,9 +308,11 @@ public class Calculator {
                 DecimalFormat df = new DecimalFormat("0.#");
                 int intresult = Integer.parseInt(df.format(result));
                 System.out.println(intresult);
+                ans = intresult;
             }
             else {
                 System.out.println(result);
+                ans = result;
             }
         }
     }
